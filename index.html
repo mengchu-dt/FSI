@@ -190,9 +190,9 @@ Statistical Inference</strong></h1>
 inference</h1>
 <h2 id="introduction">Introduction</h2>
 <p>Suppose that a set of <span class="math inline">\(n\)</span> data
-points <span class="math inline">\(\bm{x} = \{x_1,\dotsc,x_n\}\)</span>
+points <span class="math inline">\({x} = \{x_1,\dotsc,x_n\}\)</span>
 are collected in an experiment to estimate some unknown quantity.
-Statisticians view <span class="math inline">\(\bm{x}\)</span> as
+Statisticians view <span class="math inline">\({x}\)</span> as
 realisations from random variables <span class="math inline">\(\bm{X} =
 \{X_1,\dotsc, X_n\}\)</span>. Throughout the rest of this course, we
 will focus on the case where <span class="math inline">\(X_1,\dotsc,
@@ -454,17 +454,16 @@ class="math inline">\(\theta\)</span>), we have <span
 class="math inline">\(\sum_{i=1}^n X_i\)</span> has distribution <span
 class="math inline">\(\Gamma(n,\theta)\)</span> (See Proposition 3.2.18)
 with density function <span class="math inline">\(f_{n,\theta}\)</span>.
-Therefore, <span class="math display">\[\begin{aligned}
-         \mathbb{E}\mathopen{}\mathclose\bgroup\left[\frac{1}{\overline{X}_n}\aftergroup\egroup\right]
-&amp;= \mathbb{E}\mathopen{}\mathclose\bgroup\left[\frac{n}{\sum_{i=1}^n
-X_i}\aftergroup\egroup\right] = \int_0^{\infty} \frac{n}{y}
-f_{n,\theta}(y) dy = \int_0^{\infty}
-\frac{n}{y}\frac{\theta^n}{\Gamma(n)}y^{n-1}e^{-\theta y} dy \\
-         &amp;= \frac{n\theta\Gamma(n-1)}{\Gamma(n)}
-\int_0^{\infty}\frac{\theta^{n-1}}{\Gamma(n-1)}y^{n-2}e^{-\theta y} dy =
-\frac{n}{n-1} \theta \int_0^{\infty} f_{n-1,\theta}(y) dy =
-\frac{n}{n-1} \theta.
-    
+Therefore, <span class="math display">\[
+  \begin{aligned}
+    \mathbb{E} \left[\frac{1}{\overline{X}_n}\right]
+    &= \mathbb{E} \left[\frac{n}{\sum_{i=1}^n X_i}\right] 
+    = \int_0^{\infty} \frac{n}{y} f_{n,\theta}(y) \, dy 
+    = \int_0^{\infty} \frac{n}{y} \frac{\theta^n}{\Gamma(n)} y^{n-1} e^{-\theta y} \, dy \\
+    &= \frac{n\theta \, \Gamma(n-1)}{\Gamma(n)}
+    \int_0^{\infty} \frac{\theta^{n-1}}{\Gamma(n-1)} y^{n-2} e^{-\theta y} \, dy 
+    = \frac{n}{n-1} \theta \int_0^{\infty} f_{n-1,\theta}(y) \, dy 
+    = \frac{n}{n-1} \theta.
 \end{aligned}\]</span> Then we have <span
 class="math display">\[\text{Bias}(\hat{\theta}_n) = \frac{n}{n-1}\theta
 - \theta = \frac{1}{n-1}\theta.\]</span> We leave it as an exercise to
@@ -474,10 +473,8 @@ bias and variance of <span
 class="math inline">\(\hat{\theta}_n\)</span>, we can conclude using
 Lemma <a href="#lemma:bias-variance" data-reference-type="ref"
 data-reference="lemma:bias-variance">1.10</a> that <span
-class="math display">\[\text{MSE}(\hat{\theta}_n) =
-\text{Bias}(\hat{\theta}_n)^2+\text{Var}(\hat{\theta}_n) =
-\mathopen{}\mathclose\bgroup\left(\frac{1}{n-1}\theta\aftergroup\egroup\right)^2
-+ \frac{n^2\theta^2}{(n-1)^2(n-2)} =
+class="math display">\[\text{MSE}(\hat{\theta}_n) = \text{Bias}(\hat{\theta}_n)^2 + \text{Var}(\hat{\theta}_n) = 
+\left(\frac{1}{n-1}\theta\right)^2 + \frac{n^2 \theta^2}{(n-1)^2 (n-2)} = 
 \frac{n+2}{(n-1)(n-2)}\theta^2.\]</span></p>
 </div>
 <p>Bias, variance, and mean squared error are all important quantities
